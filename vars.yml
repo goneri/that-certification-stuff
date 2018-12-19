@@ -1,0 +1,11 @@
+openstack_certification_tests_by_group:
+  all:
+    - self_check
+  controller:
+    - trusted_container
+    - supportable
+    - self_check
+    - sosreport
+  compute:
+    - self_check
+

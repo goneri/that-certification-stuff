@@ -1,0 +1,13 @@
+localhost ansible_connection=local
+undercloud ansible_connection=local
+compute-01 ansible_connection=local
+compute-02 ansible_connection=local
+controller-01 ansible_connection=local
+
+[controller]
+localhost
+controller-01
+
+[compute]
+compute-01
+compute-02

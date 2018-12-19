@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+  - block:
+        - set_fact:
+            openstack_certification_tests: "{{ openstack_certification_tests_by_group['all'] }}"
+        - name: Set tests from groups
+          set_fact:
+            openstack_certification_tests: "{{ openstack_certification_tests + openstack_certification_tests_by_group[item]| unique }}"
+          with_items: "{{ group_names }}"
+      
+  - debug:
+      var: openstack_certification_tests
